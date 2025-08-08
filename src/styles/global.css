@@ -1,2 +1,20 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@font-face {
+  font-family: 'Genos';
+  src: url('/fonts/Genos-VariableFont_wght.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+.font-family-genos {
+  font-family: 'Genos', sans-serif;
+}
+@theme {
+    --color-azul: #005EB8;
+    --color-golden: #FFC845;
+    --color-whale: #1F2A44;
+    --color-cornFlower: #8BB8E8;
+    --color-blanco: #ffffff;
+}

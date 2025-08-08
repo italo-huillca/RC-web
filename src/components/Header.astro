@@ -1,0 +1,39 @@
+---
+const links = [
+  { href: "/", label: "Inicio" },
+  { href: "/nosotros", label: "Nosotros" },
+  { href: "/servicios", label: "Servicios" },
+  { href: "/experiencia", label: "Experiencia" },
+  { href: "/ventajas", label: "Ventajas" },
+  { href: "/contacto", label: "Contacto" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="flex items-stretch h-24 bg-white ">
+  <div class="w-60 flex-shrink-0  ml-3 mr-30 flex items-center justify-center p-4">
+    <img
+      aria-label="Logo de la empresa R&C Group"
+      src="/images/logo_mas_letras.webp"
+      alt="Logo de la empresa R&C Group"
+      class="w-full h-auto "
+    />
+  </div>
+  <nav class="flex-1 flex justify-between font-family-genos font-extrabold text-3xl bg-whale h-full">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          class={`h-full flex justify-center items-center transition-colors flex-1 ${
+            currentPath === link.href
+              ? "bg-golden text-whale"
+              : "text-white hover:bg-golden hover:text-whale"
+          }`}
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>

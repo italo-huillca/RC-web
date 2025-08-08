@@ -24,6 +24,15 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 @theme {
     --color-azul: #005EB8;
     --color-golden: #FFC845;

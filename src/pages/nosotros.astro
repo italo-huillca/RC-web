@@ -74,25 +74,48 @@ import { BadgeCheck } from "lucide-astro";
       />
     </div>
   </div>
-  <!-- Mision y Vision -->
-  <div class="w-full h-screen flex bg-golden items-center justify-center">
-    <div
-      class="h-[400px] flex flex-col justify-center items-end bg-whale text-white rounded-3xl shadow-xl px-10"
-    >
-      <h2 class="text-7xl mb-6 font-extrabold">Nuestra Misión</h2>
-      <p class="text-3xl max-w-lg">
-        "Brindar soluciones integrales en el ámbito de la construcción, a través
-        de la innovación y el compromiso con la sostenibilidad."
-      </p>
+   <!-- Misión y Visión estilo imagen -->
+  <div class="w-screen h-screen flex justify-center items-center py-20 bg-white ">
+    <!-- Izquierda: Título y descripción -->
+    <div class="w-[50%] h-full flex justify-end items-center   px-8">
+      <div class="flex flex-col justify-center items-center ">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-golden text-center mb-4 font-family-poppins">
+          Construimos con calidad, seguridad<br />y sostenibilidad.
+        </h2>
+        <p class="text-lg md:text-xl text-center font-family-poppins max-w-xl">
+          Llevamos más de una década desarrollando proyectos de construcción con experiencia comprobada, tecnología propia y un enfoque integral que garantiza resultados de alto nivel.
+        </p>
+
+      </div>
     </div>
-    <div
-      class="h-[400px] flex flex-col justify-center items-start bg-azul text-white rounded-3xl shadow-xl px-10"
-    >
-      <h2 class="text-7xl mb-6 font-extrabold">Nuestros Valores</h2>
-      <p class="text-3xl max-w-lg">
-        "Integridad, Innovación y Sostenibilidad son los pilares de nuestra
-        filosofía de trabajo."
-      </p>
+    <!-- Derecha: Visión y Misión con imágenes -->
+    <div class="w-[50%] flex flex-col gap-8 justify-center  px-8">
+      <div class="flex gap-6 items-center  justify-start">
+        <img
+          src="/images/Nosotros/Img_SegundoFrame_1.png"
+          alt="Equipo de construcción"
+  class="w-[300px] h-[300px] object-cover rounded-tl-[2rem] flex-shrink-0 transition-transform duration-300 hover:scale-105"
+        />
+        <div>
+          <h3 class="text-3xl font-extrabold text-golden mb-2 font-family-poppins">Visión</h3>
+          <p class="text-base font-family-poppins w-[300px]">
+            Ser líderes a nivel nacional e internacional en la ejecución de proyectos de construcción civil, destacando por nuestra capacidad instalada, innovación tecnológica, compromiso con la calidad, sostenibilidad ambiental y la satisfacción total de nuestros clientes.
+          </p>
+        </div>
+      </div>
+      <div class="flex gap-6 items-center  justify-start">
+        <div>
+          <h3 class="text-3xl font-extrabold text-golden mb-2 font-family-poppins">Misión</h3>
+          <p class="text-base font-family-poppins w-[300px]">
+            Brindar soluciones integrales en consultoría, ingeniería y ejecución de obras civiles mediante un equipo profesional altamente calificado, recursos propios y procesos certificados, cumpliendo con los más altos estándares de calidad, seguridad, eficiencia y respeto por el medio ambiente.
+          </p>
+        </div>
+        <img
+          src="/images/Nosotros/Img_SegundoFrame_2.png"
+          alt="Excavadora en obra"
+          class="w-[300px] h-[300px] object-cover rounded-br-[2rem] flex-shrink-0 transition-transform duration-300 hover:scale-105"
+        />
+      </div>
     </div>
   </div>
 

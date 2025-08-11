@@ -1,7 +1,127 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from "../layouts/Layout.astro";
+import { BadgeCheck } from "lucide-astro";
 ---
+
 <Layout title="Nosotros">
+  <!-- Quienes Somos? -->
+  <div class="flex w-full h-[calc(100vh-6rem)] bg-white">
+    <!-- Left: Texto -->
+    <div class="w-1/2 flex flex-col justify-center px-16">
+      <h2 class="text-5xl font-bold mb-6 font-family-poppins">
+        ¿Quiénes Somos?
+      </h2>
+      <p class="text-xl mb-8 font-family-poppins">
+        "Somos tu socio estratégico en consultoría y ejecución de proyectos de
+        construcción, con tecnología propia y un enfoque integral que garantiza
+        calidad y sostenibilidad."
+      </p>
+      <ul class="space-y-6">
+        <li class="flex items-center">
+          <span
+            class="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded-full mr-3"
+          >
+            <img
+              src="/images/Nosotros/check.svg"
+              alt="check"
+              class="w-10 h-10"
+            />
+          </span>
+          <span class="text-lg font-family-poppins leading-relaxed">
+            Dedicados a obras civiles y venta de agregados para la construcción.
+          </span>
+        </li>
+        <li class="flex items-center">
+          <span
+            class="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded-full mr-3"
+          >
+            <img
+              src="/images/Nosotros/check.svg"
+              alt="check"
+              class="w-10 h-10"
+            />
+          </span>
+          <span class="text-lg font-family-poppins leading-relaxed">
+            Poseemos minas propias y planta de agregados, asegurando el
+            suministro continuo y de calidad.
+          </span>
+        </li>
+        <li class="flex items-center">
+          <span
+            class="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded-full mr-3"
+          >
+            <img
+              src="/images/Nosotros/check.svg"
+              alt="check"
+              class="w-10 h-10"
+            />
+          </span>
+          <span class="text-lg font-family-poppins leading-relaxed">
+            Servicios integrales que abarcan desde consultoría y estudios
+            técnicos, hasta ejecución de obras y capacitación en seguridad.
+          </span>
+        </li>
+      </ul>
+    </div>
+    <!-- Right: Imagen -->
+    <div
+      class="w-1/2 h-full flex items-center justify-center overflow-y-hidden"
+    >
+      <img
+        src="/images/Nosotros/Img_PrimerFrame.png"
+        alt="Construcción R&C Group"
+        class="object-cover w-full h-full shadow-lg"
+      />
+    </div>
+  </div>
+  <!-- Mision y Vision -->
+  <div class="w-full h-screen flex bg-golden items-center justify-center">
+    <div
+      class="h-[400px] flex flex-col justify-center items-end bg-whale text-white rounded-3xl shadow-xl px-10"
+    >
+      <h2 class="text-7xl mb-6 font-extrabold">Nuestra Misión</h2>
+      <p class="text-3xl max-w-lg">
+        "Brindar soluciones integrales en el ámbito de la construcción, a través
+        de la innovación y el compromiso con la sostenibilidad."
+      </p>
+    </div>
+    <div
+      class="h-[400px] flex flex-col justify-center items-start bg-azul text-white rounded-3xl shadow-xl px-10"
+    >
+      <h2 class="text-7xl mb-6 font-extrabold">Nuestros Valores</h2>
+      <p class="text-3xl max-w-lg">
+        "Integridad, Innovación y Sostenibilidad son los pilares de nuestra
+        filosofía de trabajo."
+      </p>
+    </div>
+  </div>
 
+  <!-- Historia -->
+  <div class="w-full h-screen bg-gray-200 flex">
+    <div class="w-1/2">
+      <h2 class="text-7xl">Nuestra Historia</h2>
+      <ul>
+        <li>
+          <BadgeCheck /> Fundación de la empresa en 2001.
+        </li>
+        <li>Primer proyecto de infraestructura pública en 2005.</li>
+        <li>Expansión a nivel nacional en 2010.</li>
+        <li>Implementación de tecnologías sostenibles en 2015.</li>
+        <li>Reconocimientos por calidad e innovación en 2020.</li>
+      </ul>
+    </div>
+    <div class="w-1/2">
+      <p>aqui va una imagen</p>
+      <img src="" alt="" />
+    </div>
+  </div>
+
+  <!-- Valores -->
+  <div class="w-full h-screen bg-gray-200 flex">estos son nuestros valores</div>
+
+  <!-- Presencia Geografica -->
+  <div class="w-full h-screen bg-gray-200 flex">
+    5. Presencia Geográfica Oficinas y operaciones en: Arequipa, Tacna,
+    Moquegua, Lima e Ica. Cobertura nacional en proyectos públicos y privados.
+  </div>
 </Layout>
-

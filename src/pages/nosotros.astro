@@ -74,40 +74,62 @@ import { BadgeCheck } from "lucide-astro";
       />
     </div>
   </div>
-   <!-- Misión y Visión estilo imagen -->
-  <div class="w-screen h-screen flex justify-center items-center py-20 bg-white ">
+
+  <!-- Misión y Visión estilo imagen -->
+  <div
+    class="w-screen h-screen flex justify-center items-center py-20 bg-white"
+  >
     <!-- Izquierda: Título y descripción -->
-    <div class="w-[50%] h-full flex justify-end items-center   px-8">
-      <div class="flex flex-col justify-center items-center ">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-golden text-center mb-4 font-family-poppins">
+    <div class="w-[50%] h-full flex justify-end items-center px-8">
+      <div class="flex flex-col justify-center items-center">
+        <h2
+          class="text-3xl md:text-4xl font-extrabold text-golden text-center mb-4 font-family-poppins"
+        >
           Construimos con calidad, seguridad<br />y sostenibilidad.
         </h2>
         <p class="text-lg md:text-xl text-center font-family-poppins max-w-xl">
-          Llevamos más de una década desarrollando proyectos de construcción con experiencia comprobada, tecnología propia y un enfoque integral que garantiza resultados de alto nivel.
+          Llevamos más de una década desarrollando proyectos de construcción con
+          experiencia comprobada, tecnología propia y un enfoque integral que
+          garantiza resultados de alto nivel.
         </p>
-
       </div>
     </div>
     <!-- Derecha: Visión y Misión con imágenes -->
-    <div class="w-[50%] flex flex-col gap-8 justify-center  px-8">
-      <div class="flex gap-6 items-center  justify-start">
+    <div class="w-[50%] flex flex-col gap-8 justify-center px-8">
+      <div class="flex gap-6 items-center justify-start">
         <img
           src="/images/Nosotros/Img_SegundoFrame_1.png"
           alt="Equipo de construcción"
-  class="w-[300px] h-[300px] object-cover rounded-tl-[2rem] flex-shrink-0 transition-transform duration-300 hover:scale-105"
+          class="w-[300px] h-[300px] object-cover rounded-tl-[2rem] flex-shrink-0 transition-transform duration-300 hover:scale-105"
         />
         <div>
-          <h3 class="text-3xl font-extrabold text-golden mb-2 font-family-poppins">Visión</h3>
+          <h3
+            class="text-3xl font-extrabold text-golden mb-2 font-family-poppins"
+          >
+            Visión
+          </h3>
           <p class="text-base font-family-poppins w-[300px]">
-            Ser líderes a nivel nacional e internacional en la ejecución de proyectos de construcción civil, destacando por nuestra capacidad instalada, innovación tecnológica, compromiso con la calidad, sostenibilidad ambiental y la satisfacción total de nuestros clientes.
+            Ser líderes a nivel nacional e internacional en la ejecución de
+            proyectos de construcción civil, destacando por nuestra capacidad
+            instalada, innovación tecnológica, compromiso con la calidad,
+            sostenibilidad ambiental y la satisfacción total de nuestros
+            clientes.
           </p>
         </div>
       </div>
-      <div class="flex gap-6 items-center  justify-start">
+      <div class="flex gap-6 items-center justify-start">
         <div>
-          <h3 class="text-3xl font-extrabold text-golden mb-2 font-family-poppins">Misión</h3>
+          <h3
+            class="text-3xl font-extrabold text-golden mb-2 font-family-poppins"
+          >
+            Misión
+          </h3>
           <p class="text-base font-family-poppins w-[300px]">
-            Brindar soluciones integrales en consultoría, ingeniería y ejecución de obras civiles mediante un equipo profesional altamente calificado, recursos propios y procesos certificados, cumpliendo con los más altos estándares de calidad, seguridad, eficiencia y respeto por el medio ambiente.
+            Brindar soluciones integrales en consultoría, ingeniería y ejecución
+            de obras civiles mediante un equipo profesional altamente
+            calificado, recursos propios y procesos certificados, cumpliendo con
+            los más altos estándares de calidad, seguridad, eficiencia y respeto
+            por el medio ambiente.
           </p>
         </div>
         <img
@@ -119,28 +141,188 @@ import { BadgeCheck } from "lucide-astro";
     </div>
   </div>
 
-  <!-- Historia -->
-  <div class="w-full h-screen bg-gray-200 flex">
-    <div class="w-1/2">
-      <h2 class="text-7xl">Nuestra Historia</h2>
-      <ul>
-        <li>
-          <BadgeCheck /> Fundación de la empresa en 2001.
-        </li>
-        <li>Primer proyecto de infraestructura pública en 2005.</li>
-        <li>Expansión a nivel nacional en 2010.</li>
-        <li>Implementación de tecnologías sostenibles en 2015.</li>
-        <li>Reconocimientos por calidad e innovación en 2020.</li>
-      </ul>
+  <!-- Nuestro Legado -->
+  <div
+    class="w-full h-screen flex flex-col py-[50px] transition-colors duration-300"
+  >
+    <div class="flex w-full justify-center">
+      <h2
+        class="text-5xl font-bold text-center mb-8 border-b-4 border-golden inline-block"
+      >
+        Nuestro Legado
+      </h2>
     </div>
-    <div class="w-1/2">
-      <p>aqui va una imagen</p>
-      <img src="" alt="" />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+      <div class="flex flex-col gap-10">
+        <div
+          class="h-[170px] flex items-center justify-center bg-whale text-white/80 p-6 border-[10px] font-bold border-golden text-2xl text-center shadow-md
+                  transition transform hover:scale-105
+                  hover:bg-golden hover:border-whale hover:text-whale hover:font-bold"
+        >
+          <p>Trayectoria sólida en infraestructura pública y privada.</p>
+        </div>
+
+        <div
+          class="h-[170px] flex items-center justify-center bg-whale text-white/80 p-6 border-[10px] font-bold border-golden text-2xl text-center shadow-md
+                  transition transform hover:scale-105
+                  hover:bg-golden hover:border-whale hover:text-whale hover:font-bold"
+        >
+          <p>
+            Experiencia en planificación, investigación y ejecución de obras de
+            gran envergadura.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center">
+        <div
+          class="flex items-center justify-center bg-whale text-white/80 p-6 border-[10px] font-bold border-golden text-2xl text-center shadow-md
+                  transition transform hover:scale-105
+                  hover:bg-golden hover:border-whale hover:text-whale hover:font-bold"
+        >
+          <p>
+            Supervisión técnica y consultoría especializada por profesionales
+            con formación internacional.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-10">
+        <div
+          class="h-[170px] flex items-center justify-center bg-whale text-white/80 p-6 border-[10px] font-bold border-golden text-2xl text-center shadow-md
+                  transition transform hover:scale-105
+                  hover:bg-golden hover:border-whale hover:text-whale hover:font-bold"
+        >
+          <p>
+            Innovación continua en tecnologías y metodologías constructivas.
+          </p>
+        </div>
+        <div
+          class="h-[170px] flex items-center justify-center bg-whale text-white/80 p-6 border-[10px] font-bold border-golden text-2xl text-center shadow-md
+                  transition transform hover:scale-105
+                  hover:bg-golden hover:border-whale hover:text-whale hover:font-bold"
+        >
+          <p>Participación en proyectos estratégicos a nivel nacional.</p>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Valores -->
-  <div class="w-full h-screen bg-gray-200 flex">estos son nuestros valores</div>
+  <div class="w-full h-screen  flex items-center justify-center  border border-black">
+    <div class="w-1/2">
+      <h2
+        class="text-5xl font-bold text-center mb-8 border-b-4 border-golden inline-block font-family-poppins"
+      >
+        Valores
+      </h2>
+      <div class="grid grid-cols-2 gap-8 mt-10">
+        <!-- Card 1 -->
+        <div class="group [perspective:1000px]">
+          <div
+            class="relative w-full h-48 transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+          >
+            <!-- Front -->
+            <div
+              class="absolute inset-0 bg-golden shadow-lg flex flex-col items-center justify-center text-center font-bold text-xl font-family-poppins [backface-visibility:hidden]"
+            >
+              Calidad<br />
+              <span class="font-normal text-base"
+                >Estándares rigurosos y cumplimiento técnico-normativo.</span
+              >
+            </div>
+            <!-- Back -->
+            <div
+              class="absolute inset-0 bg-white flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]"
+            >
+              <img
+                src="/images/Nosotros/logo_mas_letras.webp"
+                alt="Logo R&C Group"
+                class="w-32 h-16 object-contain"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="group [perspective:1000px]">
+          <div
+            class="relative w-full h-48 transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+          >
+            <div
+              class="absolute inset-0 bg-golden shadow-lg flex flex-col items-center justify-center text-center font-bold text-xl font-family-poppins [backface-visibility:hidden]"
+            >
+              Seguridad<br />
+              <span class="font-normal text-base"
+                >Capacitación constante y planes de prevención de riesgos.</span
+              >
+            </div>
+            <div
+              class="absolute inset-0 bg-white flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]"
+            >
+              <img
+                src="/images/Nosotros/logo_mas_letras.webp"
+                alt="Logo R&C Group"
+                class="w-32 h-16 object-contain"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="group [perspective:1000px]">
+          <div
+            class="relative w-full h-48 transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+          >
+            <div
+              class="absolute inset-0 bg-golden shadow-lg flex flex-col items-center justify-center text-center font-bold text-xl font-family-poppins [backface-visibility:hidden]"
+            >
+              Eficiencia<br />
+              <span class="font-normal text-base"
+                >Optimización de tiempos y costos gracias a recursos propios.</span
+              >
+            </div>
+            <div
+              class="absolute inset-0 bg-white flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]"
+            >
+              <img
+                src="/images/Nosotros/logo_mas_letras.webp"
+                alt="Logo R&C Group"
+                class="w-32 h-16 object-contain"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="group [perspective:1000px]">
+          <div
+            class="relative w-full h-48 transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+          >
+            <div
+              class="absolute inset-0 bg-golden shadow-lg flex flex-col items-center justify-center text-center font-bold text-xl font-family-poppins [backface-visibility:hidden]"
+            >
+              Sostenibilidad<br />
+              <span class="font-normal text-base"
+                >Procesos que reducen el impacto ambiental, uso de cemento
+                natural ecológico y manejo responsable de residuos.</span
+              >
+            </div>
+            <div
+              class="absolute inset-0 bg-white flex items-center justify-center [transform:rotateY(180deg)] [backface-visibility:hidden]"
+            >
+              <img
+                src="/images/Nosotros/logo_mas_letras.webp"
+                alt="Logo R&C Group"
+                class="w-32 h-16 object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-1/2">
+      <img src="/images/Nosotros/cuartoFrame/Image_4toFrame.png" alt="Puente">
+    </div>
+  </div>
 
   <!-- Presencia Geografica -->
   <div class="w-full h-screen bg-gray-200 flex">

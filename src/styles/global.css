@@ -40,3 +40,169 @@ body {
     --color-cornFlower: #8BB8E8;
     --color-blanco: #ffffff;
 }
+
+/* ===========================
+  Pagina de inicio - Hero
+  =========================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 1.6s cubic-bezier(.22,.9,.35,1) both;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+.animate-zoomSlow {
+  animation: slowZoom 40s linear infinite alternate;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* ========================
+  Segundo section - Sobre la empresa
+  ==========================*/
+
+:root {
+    --animate-distance: 450px;
+}
+
+@keyframes fadeLeftIn {
+    from {
+        opacity: 0;
+        transform: translateX(calc(-1 * var(--animate-distance)));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRightIn {
+    from {
+        opacity: 0;
+        transform: translateX(var(--animate-distance));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-left,
+.fade-right {
+    opacity: 0;
+    animation-fill-mode: both;
+}
+
+.fade-left.show {
+    animation: fadeLeftIn 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.fade-right.show {
+    animation: fadeRightIn 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ajuste parea moviles */
+@media (max-width: 767px) {
+    :root {
+        --animate-distance: 50px;
+    }
+    
+    .fade-left.show,
+    .fade-right.show {
+        animation-duration: 0.5s;
+    }
+    
+    .flex-wrap {
+        overflow-x: hidden;
+    }
+}
+
+/* Corrección para pantallas muy pequeñas */
+@media (max-width: 420px) {
+    :root {
+        --animate-distance: 30px;
+    }
+}
+
+
+
+
+/* ========================
+  Tercero section - Servicios
+  ==========================*/
+.perspective {
+  perspective: 1200px;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+  opacity: 0;
+}
+
+.flip-card-front, .flip-card-back {
+  backface-visibility: hidden;
+  transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop-blur-\[2px\] {
+  backdrop-filter: blur(2px);
+}
+
+.drop-shadow-md {
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+}
+
+@media (max-width: 640px) {
+  .perspective {
+    perspective: 800px;
+  }
+  
+  .flip-card-front, .flip-card-back {
+    padding: 1.5rem;
+  }
+}
+
+/* interaccion con movils */
+.service-card {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.service-card > div {
+  transition: transform 0.3s ease;
+}
+
+.service-card:active > div {
+  transform: scale(0.98);
+}
+
+
+
+/* ========================
+  Cuarto section - Clientes
+  ==========================*/
+  .animate-scroll-logos {
+    animation: scroll 20s linear infinite;
+    width: max-content;
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .client-logo {
+    @apply p-4 bg-gray-50 rounded-xl flex items-center justify-center;
+    height: 120px;
+    transition: all 0.3s ease;
+  }
+  
+  .client-logo:hover {
+    @apply shadow-lg transform -translate-y-1;
+    background-color: #f8fafc;
+  }

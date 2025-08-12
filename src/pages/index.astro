@@ -1,7 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
----
 
+const HAS_CLIENT_ASSETS = false; // cambia a true cuando subas los logos
+const CLIENT_PLACEHOLDER =
+  'data:image/svg+xml;utf8,' +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="240" height="72" viewBox="0 0 240 72">
+      <rect width="100%" height="100%" fill="#F1F5F9"/>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+            fill="#94A3B8" font-family="Arial, sans-serif" font-size="16">
+        Próximamente
+      </text>
+    </svg>`
+  );
+---
 <Layout title="R&C Group Contratistas generales">
     <section class="relative h-[90vh] min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
       <!-- Video optimizado para todos los dispositivos -->
@@ -54,7 +66,7 @@ import Layout from "../layouts/Layout.astro";
     
 
     <!-- Segunda seccion-->
-    <section class="relative bg-white py-24 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="nosotros" class="relative bg-white py-24 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
 
       <div class="absolute inset-0 z-0">
         <img src="/images/construccion-bg.webp" alt="Fondo construcción" 
@@ -202,60 +214,51 @@ import Layout from "../layouts/Layout.astro";
 
     
 
-<!-- Sección Nuestros Clientes -->
-    <section class="bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12 md:mb-16">
+    {HAS_CLIENT_ASSETS ? (
+      <section class="bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#005EB8] mb-4">Nuestros Clientes</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+              Clientes que confían en nosotros y en la calidad de nuestro servicio.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div class="client-logo">
+                <img
+                  src={`/images/clientes/cliente${i + 1}.png`}
+                  alt={`Logo Cliente ${i + 1}`}
+                  class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                  width="240"
+                  height="72"
+                  onerror={`this.onerror=null; this.src='${CLIENT_PLACEHOLDER}'; this.classList.remove('grayscale');`}
+                />
+              </div>
+            ))}
+          </div>
+          <!-- Opcional: elimina el carrusel duplicado para evitar más requests -->
+        </div>
+      </section>
+    ) : (
+      <section class="bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
           <h2 class="text-3xl md:text-4xl font-bold text-[#005EB8] mb-4">Nuestros Clientes</h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Clientes que confían en nosotros y en la calidad de nuestro servicio.
+          <p class="text-lg text-gray-600">
+            Estamos actualizando esta sección. Pronto verás a nuestros principales aliados.
           </p>
+          <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 opacity-80">
+            {Array.from({ length: 5 }).map(() => (
+              <div class="border border-slate-200 rounded-lg p-6 bg-slate-50 animate-pulse aspect-[12/4]"></div>
+            ))}
+          </div>
         </div>
+      </section>
+    )}
 
-        
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12">
-      
-          <div class="client-logo">
-            <img src="/images/clientes/cliente1.png" alt="Logo Cliente 1" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
-          </div>
-          
-          <div class="client-logo">
-            <img src="/images/clientes/cliente2.png" alt="Logo Cliente 2" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
-          </div>
-          
-          <div class="client-logo">
-            <img src="/images/clientes/cliente3.png" alt="Logo Cliente 3" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
-          </div>
-          
-          <div class="client-logo">
-            <img src="/images/clientes/cliente4.png" alt="Logo Cliente 4" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
-          </div>
-          
-          <div class="client-logo">
-            <img src="/images/clientes/cliente5.png" alt="Logo Cliente 5" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
-          </div>
-        </div>
-
-        <div class="mt-12 overflow-hidden">
-          <div class="flex animate-scroll-logos">
-            <div class="flex space-x-12 px-4">
-              <img src="/images/clientes/cliente1.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente2.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente3.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente4.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente5.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              
-              <img src="/images/clientes/cliente1.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente2.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente3.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente4.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente5.png" alt="" class="h-12 object-contain grayscale opacity-80">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
   <script src="/scripts/scroll-animations.js" is:inline></script>
 </Layout>
 

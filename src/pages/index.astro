@@ -1,8 +1,289 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-
 ---
 
 <Layout title="R&C Group Contratistas generales">
+    <section class="relative h-[90vh] min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
+      <!-- Video optimizado para todos los dispositivos -->
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        loop
+        muted
+        playsinline
+        poster="/images/fondo-construccion-poster.jpg"
+      >
+        <source src="/videos/fondo-construccion.mp4" type="video/mp4">
+        <source src="/videos/fondo-construccion.webm" type="video/webm">
+        Tu navegador no soporta el video HTML5.
+      </video>
+
+      <!-- Overlay de color -->
+      <div class="absolute inset-0 bg-[#1F2A44]/70"></div>
+
+      <!-- Contenido mejorado -->
+      <div class="relative z-10 max-w-4xl px-6 w-full">
+        <h1 class="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4 leading-snug animate-fadeIn" style="animation-delay: 0.05s;">
+          R&C CONTRATISTAS GENERALES S.A.C.
+        </h1>
+        
+        <p class="font-sans text-sm sm:text-base md:text-lg mb-6 md:mb-8 text-[#8BB0E8] leading-relaxed animate-fadeIn" style="animation-delay: 0.4s;">
+          Expertos en <span class="text-[#FFC845] font-semibold">consultoría</span> y 
+          <span class="text-[#FFC845] font-semibold">ejecución de obras civiles</span>, con venta de agregados de 
+          <span class="text-[#FFC845] font-semibold">mina y planta propia</span> — garantizando 
+          <span class="text-[#FFC845] font-semibold">calidad</span>, 
+          <span class="text-[#FFC845] font-semibold">eficiencia</span> y 
+          <span class="text-[#FFC845] font-semibold">sostenibilidad</span>.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fadeIn" style="animation-delay: 0.6s;">
+          <a href="#nosotros" 
+            class="px-5 sm:px-6 py-2 sm:py-3 rounded-lg font-bold text-[#1F2A44] bg-gradient-to-r from-[#FFD249] to-[#FFB800] hover:from-[#FFC107] hover:to-[#E6A600] shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.03]">
+            Conócenos
+          </a>
+
+          <a href="/servicios" 
+            class="px-5 sm:px-6 py-2 sm:py-3 rounded-lg font-bold text-white bg-gradient-to-r from-[#0069D9] to-[#004A91] hover:from-[#0056B3] hover:to-[#003C75] shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-[1.03]">
+            Nuestros servicios
+          </a>
+        </div>
+      </div>
+      
+      
+    </section>
+    
+
+    <!-- Segunda seccion-->
+    <section class="relative bg-white py-24 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
+
+      <div class="absolute inset-0 z-0">
+        <img src="/images/construccion-bg.webp" alt="Fondo construcción" 
+            class="w-full h-full object-cover opacity-[0.95]">
+        <div class="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-white/20"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <div class="flex-1 min-w-[200px] fade-left">
+          <h2 class="text-3xl md:text-4xl lg:text-4xl font-bold text-[#005EB8] mb-4 md:mb-6 leading-tight">
+            R&C CONTRATISTAS GENERALES S.A.C.
+          </h2>
+          
+          <div class="prose-lg max-w-2xl">
+            <p class="text-[#1F2A44] font-medium leading-relaxed md:leading-loose mb-6 md:mb-8 drop-shadow-sm">
+              En R&C CONTRATISTAS GENERALES S.A.C. somos especialistas en consultoría y ejecución de obras civiles, 
+              ofreciendo soluciones integrales gracias a nuestras minas y planta de agregados propias. 
+              Combinamos experiencia, tecnología y compromiso para garantizar calidad, eficiencia y sostenibilidad en cada proyecto.
+            </p>
+          </div>
+
+          <a href="/nosotros#mision" 
+            class="group inline-flex items-center gap-2 px-6 py-3 bg-[#FFC845] text-[#1F2A44] font-bold rounded-lg shadow-md hover:bg-[#FFB800] transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+            Conoce nuestra Misión
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="flex-1 min-w-[300px] text-center fade-right">
+          <div class="relative rounded-xl shadow-xl overflow-hidden border-4 border-white/20">
+            <img src="/images/fondo-construccion.jpg" 
+                alt="Imagen de la empresa" 
+                class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- separador-->
+    <div class="w-full bg-white py-6">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="h-[2px] bg-gradient-to-r from-transparent via-[#FFC845] to-transparent"></div> 
+      </div>
+    </div>
+
+  <!-- Tercera seccion -->
+    <section id="servicios" class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-[#005EB8] mb-12 md:mb-16">
+          Lo que podemos hacer por ti
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <!-- tarjeta Obras Civiles -->
+          <div class="service-card perspective">
+            <div class="relative w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-lg">
+              <img src="/images/obras-civiles.jpg" alt="Obras Civiles" class="absolute inset-0 w-full h-full object-cover">
+              <div class="flip-card-front absolute inset-0 bg-[rgba(139,184,232,0.4)] backdrop-blur-[2px] p-6 flex flex-col items-center justify-center">
+                <h3 class="text-2xl md:text-3xl font-semibold text-white text-center drop-shadow-md">Obras Civiles</h3>
+                  <span class="absolute bottom-6 text-white text-opacity-90 text-sm animate-bounce hidden sm:block">↻ Toca para girar</span>
+              </div>
+              <div class="flip-card-back absolute inset-0 bg-[rgba(31,42,68,0.6)] backdrop-blur-[2px] p-6 flex items-center justify-center text-white text-center rotate-y-180">
+                  <p class="text-lg md:text-xl drop-shadow-md">Ejecución y supervisión de proyectos de infraestructura.</p>
+              </div>
+            </div>
+          </div>
+
+          <!--tarjeta de topografia -->
+          <div class="service-card perspective opacity-0 translate-y-6 transition-all duration-500 ease-out">
+            <div class="relative w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-lg">
+              <img src="/images/materiales.jpg" alt="Topografía" class="absolute inset-0 w-full h-full object-cover">
+              <div class="flip-card-front absolute inset-0 bg-[rgba(255,200,69,0.4)] backdrop-blur-[2px] p-6 flex flex-col items-center justify-center transition-all duration-500 ease-in-out transform origin-center">
+                <h3 class="text-2xl md:text-3xl font-semibold text-white text-center drop-shadow-md">Provisión de Materiales para Construcción </h3>
+                  <div class="absolute bottom-6 left-0 right-0 flex justify-center">
+                    <span class="text-white text-opacity-90 text-sm animate-bounce hidden sm:block">↻ Toca para girar</span>
+                  </div>
+              </div>
+              <div class="flip-card-back absolute inset-0 bg-[rgba(31,42,68,0.6)] backdrop-blur-[2px] p-6 flex items-center justify-center text-white text-center transition-all duration-500 ease-in-out transform origin-center rotate-y-180">
+                <p class="text-lg md:text-xl drop-shadow-md">Gracias a nuestras minas y canteras propias, contamos con una amplia gama de materiales de construcción de alta calidad. Proveemos agregados, cemento natural y otros insumos esenciales para tu proyecto</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- tarjeta Arquitectura -->
+          <div class="service-card perspective">
+            <div class="relative w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-lg">
+              <img src="/images/arquitectura.jpg" alt="Arquitectura" class="absolute inset-0 w-full h-full object-cover">
+                <div class="flip-card-front absolute inset-0 bg-[rgba(31,42,68,0.4)] backdrop-blur-[2px] p-6 flex flex-col items-center justify-center">
+                  <h3 class="text-2xl md:text-3xl font-semibold text-white text-center drop-shadow-md">Arquitectura</h3>
+                    <span class="absolute bottom-6 text-white text-opacity-90 text-sm animate-bounce hidden sm:block">↻ Toca para girar</span>
+                </div>
+              <div class="flip-card-back absolute inset-0 bg-[rgba(139,184,232,0.6)] backdrop-blur-[2px] p-6 flex items-center justify-center text-white text-center rotate-y-180">
+                <p class="text-lg md:text-xl drop-shadow-md">Diseño arquitectónico funcional y estético para cada necesidad.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-full flex justify-center mt-8">
+            <a href="/servicios" 
+              class="group inline-flex items-center gap-2 px-6 py-3 text-base font-semibold text-[#005EB8] border-2 border-[#005EB8] rounded-lg bg-white/80 backdrop-blur-sm shadow-md transition-all duration-300 hover:bg-[#005EB8] hover:text-white hover:shadow-lg">
+              Ver todos los servicios
+              <span class="transition-transform duration-300 transform group-hover:translate-x-1">→</span>
+            </a>
+          </div>
+        </div>
+        
+    </section>
+    
+
+
+    <!-- Cuarta seccion -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <section id="contador-section" class="relative bg-[#1F2A44] py-24 md:py-27 px-4 sm:px-6 lg:px-8">
+      <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('/images/plano.jpg');"></div>
+
+      <div class="relative max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 text-white">
+        <div class="flex items-center justify-center py-6 space-x-6">
+          <i class="fa-regular fa-building text-5xl md:text-6xl text-[#FFC845]"></i>
+          <div class="text-center">
+            <h3 class="text-4xl md:text-5xl font-bold mb-2 counter" data-target="260">0+</h3>
+            <p class="text-lg md:text-xl">Obras Entregadas</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center py-6 space-x-6">
+          <i class="fa-solid fa-helmet-safety text-5xl md:text-6xl text-[#FFC845]"></i>
+          <div class="text-center">
+            <h3 class="text-4xl md:text-5xl font-bold mb-2 counter" data-target="30">0+</h3>
+            <p class="text-lg md:text-xl">Años de Experiencia</p>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center py-6 space-x-6">
+          <i class="fa-regular fa-circle-user text-5xl md:text-6xl text-[#FFC845]"></i>
+          <div class="text-center">
+            <h3 class="text-4xl md:text-5xl font-bold mb-2 counter" data-target="80">0+</h3>
+            <p class="text-lg md:text-xl">Clientes Satisfechos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+<!-- Sección Nuestros Clientes -->
+    <section class="bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12 md:mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#005EB8] mb-4">Nuestros Clientes</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Clientes que confían en nosotros y en la calidad de nuestro servicio.
+          </p>
+        </div>
+
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12">
+      
+          <div class="client-logo">
+            <img src="/images/clientes/cliente1.png" alt="Logo Cliente 1" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
+          </div>
+          
+          <div class="client-logo">
+            <img src="/images/clientes/cliente2.png" alt="Logo Cliente 2" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
+          </div>
+          
+          <div class="client-logo">
+            <img src="/images/clientes/cliente3.png" alt="Logo Cliente 3" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
+          </div>
+          
+          <div class="client-logo">
+            <img src="/images/clientes/cliente4.png" alt="Logo Cliente 4" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
+          </div>
+          
+          <div class="client-logo">
+            <img src="/images/clientes/cliente5.png" alt="Logo Cliente 5" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
+          </div>
+        </div>
+
+        <div class="mt-12 overflow-hidden">
+          <div class="flex animate-scroll-logos">
+            <div class="flex space-x-12 px-4">
+              <img src="/images/clientes/cliente1.png" alt="" class="h-12 object-contain grayscale opacity-80">
+              <img src="/images/clientes/cliente2.png" alt="" class="h-12 object-contain grayscale opacity-80">
+              <img src="/images/clientes/cliente3.png" alt="" class="h-12 object-contain grayscale opacity-80">
+              <img src="/images/clientes/cliente4.png" alt="" class="h-12 object-contain grayscale opacity-80">
+              <img src="/images/clientes/cliente5.png" alt="" class="h-12 object-contain grayscale opacity-80">
+              
+              <img src="/images/clientes/cliente1.png" alt="" class="h-12 object-contain grayscale opacity-80">
+              <img src="/images/clientes/cliente2.png" alt="" class="h-12 object-contain grayscale opacity-80">
+              <img src="/images/clientes/cliente3.png" alt="" class="h-12 object-contain grayscale opacity-80">
+              <img src="/images/clientes/cliente4.png" alt="" class="h-12 object-contain grayscale opacity-80">
+              <img src="/images/clientes/cliente5.png" alt="" class="h-12 object-contain grayscale opacity-80">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  <script src="/scripts/scroll-animations.js" is:inline></script>
 </Layout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,159 @@
 ---
-import Layout from '../layouts/Layout.astro'
----
-<Layout title="Ventajas">
+import Layout from "../layouts/Layout.astro";
 
+// Ventajas con gradientes (sin SVG)
+const ventajas = [
+  { titulo: "Capital humano de alto nivel", color: "from-golden to-amber-500",
+    texto: "Profesionales altamente capacitados con experiencia internacional e innovación constante." },
+  { titulo: "Capacidad instalada propia", color: "from-sky-400 to-cyan-500",
+    texto: "Planta de agregados, canteras y minas propias, más fábrica de cemento natural tecnólogo." },
+  { titulo: "Maquinaria y equipos propios", color: "from-emerald-400 to-teal-500",
+    texto: "Flota moderna (cargadores, volquetes, retroexcavadoras, motoniveladoras, etc.) disponible y controlada." },
+  { titulo: "Compromiso ambiental", color: "from-lime-400 to-green-500",
+    texto: "Cemento natural sin hornos, manejo responsable de residuos y control de polución." },
+  { titulo: "Mayor eficiencia y ahorro de tiempo", color: "from-fuchsia-500 to-pink-500",
+    texto: "Optimización de la cadena productiva y cumplimiento estricto de cronogramas exigentes." },
+  { titulo: "Reconocimiento y confianza", color: "from-indigo-500 to-violet-500",
+    texto: "Proyectos públicos y privados exitosos, puntualidad y estándares de calidad certificados." }
+];
+
+const pilares = [
+  { titulo: "Calidad", color: "bg-golden", puntos: [
+    "Cumplimiento técnico-normativo",
+    "Durabilidad y eficiencia estructural",
+    "Procesos sostenibles responsables"
+  ]},
+  { titulo: "Seguridad", color: "bg-emerald-500", puntos: [
+    "Capacitaciones continuas",
+    "Planes de contingencia y riesgos",
+    "Cultura preventiva integral"
+  ]},
+  { titulo: "Puntualidad", color: "bg-sky-500", puntos: [
+    "Respeto a cronogramas",
+    "Planificación trazable",
+    "Valor corporativo constante"
+  ]}
+];
+
+const indicadores = [
+  { nombre: "PPC - % Planes Concluidos", desc: "Avance real vs plan programado." },
+  { nombre: "CPU - Costo de Producción Unitario", desc: "Control sobre presupuesto inicial." },
+  { nombre: "Número de Inspecciones", desc: "Frecuencia de controles técnicos." },
+  { nombre: "Tiempo de Entrega de Suministros", desc: "Abastecimiento oportuno." },
+  { nombre: "Control de Fallas y Reprogramaciones", desc: "Gestión eficiente de imprevistos." }
+];
+---
+
+<Layout title="Ventajas Competitivas">
+  <!-- Hero -->
+  <section class="pt-16 pb-20 bg-gradient-to-b from-whale to-whale/90 text-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-golden tracking-tight">Ventajas Competitivas</h1>
+      <p class="mt-6 max-w-3xl mx-auto text-lg text-cornFlower leading-relaxed">
+        Fortalezas que nos permiten entregar proyectos de alta calidad con eficiencia, menor costo y en menor tiempo.
+      </p>
+    </div>
+  </section>
+
+  <!-- Ventajas -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-whale mb-10">Nuestras Fortalezas Clave</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {ventajas.map((v, i) => (
+          <div class="group rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transition bg-gradient-to-b from-white to-slate-50 p-6 flex flex-col">
+            <div class={`mb-5 w-14 h-14 rounded-xl bg-gradient-to-br ${v.color} flex items-center justify-center shadow-inner`}>
+              <span class="text-white font-bold text-lg drop-shadow-sm">{String(i + 1).padStart(2, "0")}</span>
+            </div>
+            <h3 class="text-lg font-bold text-whale group-hover:text-golden transition">{v.titulo}</h3>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">{v.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilares -->
+  <section class="py-20 bg-whale text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-12">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-golden">Calidad, Seguridad y Puntualidad</h2>
+        <p class="mt-4 max-w-3xl text-cornFlower leading-relaxed">
+          Pilares que sustentan cada obra que ejecutamos con responsabilidad y excelencia.
+        </p>
+      </div>
+      <div class="grid gap-10 md:grid-cols-3">
+        {pilares.map((p) => (
+          <div class="relative rounded-xl overflow-hidden bg-whale/40 border border-white/10 backdrop-blur p-6">
+            <div class={`absolute top-0 left-0 w-full h-1 ${p.color}`}></div>
+            <h3 class="text-xl font-bold text-white">{p.titulo}</h3>
+            <ul class="mt-5 space-y-2 text-sm text-cornFlower">
+              {p.puntos.map(line => (
+                <li class="relative pl-4 before:absolute before:left-0 before:top-1.5 before:w-2 before:h-2 before:rounded-full before:bg-golden">
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="relative py-24 bg-white text-whale overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute -top-32 -right-20 w-96 h-96 rounded-full bg-golden/20 blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-10 w-[34rem] h-[34rem] rounded-full bg-golden/10 blur-3xl"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+            Transformamos tus proyectos en <span class="text-golden">resultados confiables</span>
+          </h2>
+          <p class="mt-6 text-slate-600 leading-relaxed text-sm sm:text-base max-w-lg">
+            Recursos propios, planificación rigurosa y compromiso ambiental para ejecutar obras con calidad,
+            seguridad y puntualidad. Conversemos tu siguiente proyecto.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="/contacto"
+               class="inline-flex items-center justify-center bg-golden text-whale font-semibold px-8 py-3 rounded-lg shadow-sm hover:bg-golden/90 focus:outline-none focus:ring-2 focus:ring-golden/40 transition text-sm sm:text-base">
+              Solicitar una Cotización
+            </a>
+            <a href="/servicios"
+               class="inline-flex items-center justify-center border border-whale/30 text-whale font-semibold px-8 py-3 rounded-lg hover:bg-whale/5 focus:outline-none focus:ring-2 focus:ring-whale/30 transition text-sm sm:text-base">
+              Ver Servicios
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="rounded-2xl bg-white border border-slate-200 p-8 shadow-sm">
+            <ul class="space-y-4 text-sm text-slate-600">
+              <li class="flex gap-3">
+                <span class="w-2 h-2 mt-2 rounded-full bg-golden flex-shrink-0"></span>
+                Integración vertical: menos intermediarios y mayor control.
+              </li>
+              <li class="flex gap-3">
+                <span class="w-2 h-2 mt-2 rounded-full bg-golden flex-shrink-0"></span>
+                Indicadores de desempeño para decisiones precisas.
+              </li>
+              <li class="flex gap-3">
+                <span class="w-2 h-2 mt-2 rounded-full bg-golden flex-shrink-0"></span>
+                Procesos sostenibles con menor huella ambiental.
+              </li>
+              <li class="flex gap-3">
+                <span class="w-2 h-2 mt-2 rounded-full bg-golden flex-shrink-0"></span>
+                Cumplimiento estricto de plazos y estándares técnicos.
+              </li>
+            </ul>
+            <div class="mt-8 text-xs text-slate-500">
+              R&C Group · Excelencia operacional y compromiso sostenible
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
 

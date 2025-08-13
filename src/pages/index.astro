@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="R&C Group Contratistas generales">
+  
     <section class="relative h-[90vh] min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
-      <!-- Video optimizado para todos los dispositivos -->
       <video
         class="absolute inset-0 w-full h-full object-cover"
         autoplay
@@ -17,11 +17,8 @@ import Layout from "../layouts/Layout.astro";
         <source src="/videos/fondo-construccion.webm" type="video/webm">
         Tu navegador no soporta el video HTML5.
       </video>
-
-      <!-- Overlay de color -->
       <div class="absolute inset-0 bg-[#1F2A44]/70"></div>
 
-      <!-- Contenido mejorado -->
       <div class="relative z-10 max-w-4xl px-6 w-full">
         <h1 class="font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4 leading-snug animate-fadeIn" style="animation-delay: 0.05s;">
           R&C CONTRATISTAS GENERALES S.A.C.
@@ -48,14 +45,11 @@ import Layout from "../layouts/Layout.astro";
           </a>
         </div>
       </div>
-      
-      
     </section>
     
 
     <!-- Segunda seccion-->
     <section class="relative bg-white py-24 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
-
       <div class="absolute inset-0 z-0">
         <img src="/images/construccion-bg.webp" alt="Fondo construcción" 
             class="w-full h-full object-cover opacity-[0.95]">
@@ -87,7 +81,7 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="flex-1 min-w-[300px] text-center fade-right">
           <div class="relative rounded-xl shadow-xl overflow-hidden border-4 border-white/20">
-            <img src="/images/fondo-construccion.jpg" 
+            <img src="/images/fondo-construccion.webp" 
                 alt="Imagen de la empresa" 
                 class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105">
           </div>
@@ -112,8 +106,8 @@ import Layout from "../layouts/Layout.astro";
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <!-- tarjeta Obras Civiles -->
           <div class="service-card perspective">
-            <div class="relative w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-lg">
-              <img src="/images/obras-civiles.jpg" alt="Obras Civiles" class="absolute inset-0 w-full h-full object-cover">
+            <div class="relative w-full h-64 md:h-72 overflow-hidden shadow-lg">
+              <img src="/images/obras-civiles.webp" alt="Obras Civiles" class="absolute inset-0 w-full h-full object-cover">
               <div class="flip-card-front absolute inset-0 bg-[rgba(139,184,232,0.4)] backdrop-blur-[2px] p-6 flex flex-col items-center justify-center">
                 <h3 class="text-2xl md:text-3xl font-semibold text-white text-center drop-shadow-md">Obras Civiles</h3>
                   <span class="absolute bottom-6 text-white text-opacity-90 text-sm animate-bounce hidden sm:block">↻ Toca para girar</span>
@@ -126,8 +120,8 @@ import Layout from "../layouts/Layout.astro";
 
           <!--tarjeta de topografia -->
           <div class="service-card perspective opacity-0 translate-y-6 transition-all duration-500 ease-out">
-            <div class="relative w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-lg">
-              <img src="/images/materiales.jpg" alt="Topografía" class="absolute inset-0 w-full h-full object-cover">
+            <div class="relative w-full h-64 md:h-72  overflow-hidden shadow-lg">
+              <img src="/images/materiales.webp" alt="Topografía" class="absolute inset-0 w-full h-full object-cover">
               <div class="flip-card-front absolute inset-0 bg-[rgba(255,200,69,0.4)] backdrop-blur-[2px] p-6 flex flex-col items-center justify-center transition-all duration-500 ease-in-out transform origin-center">
                 <h3 class="text-2xl md:text-3xl font-semibold text-white text-center drop-shadow-md">Provisión de Materiales para Construcción </h3>
                   <div class="absolute bottom-6 left-0 right-0 flex justify-center">
@@ -142,8 +136,8 @@ import Layout from "../layouts/Layout.astro";
 
           <!-- tarjeta Arquitectura -->
           <div class="service-card perspective">
-            <div class="relative w-full h-64 md:h-72 rounded-xl overflow-hidden shadow-lg">
-              <img src="/images/arquitectura.jpg" alt="Arquitectura" class="absolute inset-0 w-full h-full object-cover">
+            <div class="relative w-full h-64 md:h-72  overflow-hidden shadow-lg">
+              <img src="/images/arquitectura.webp" alt="Arquitectura" class="absolute inset-0 w-full h-full object-cover">
                 <div class="flip-card-front absolute inset-0 bg-[rgba(31,42,68,0.4)] backdrop-blur-[2px] p-6 flex flex-col items-center justify-center">
                   <h3 class="text-2xl md:text-3xl font-semibold text-white text-center drop-shadow-md">Arquitectura</h3>
                     <span class="absolute bottom-6 text-white text-opacity-90 text-sm animate-bounce hidden sm:block">↻ Toca para girar</span>
@@ -170,8 +164,7 @@ import Layout from "../layouts/Layout.astro";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <section id="contador-section" class="relative bg-[#1F2A44] py-24 md:py-27 px-4 sm:px-6 lg:px-8">
-      <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('/images/plano.jpg');"></div>
-
+      <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('/images/plano.webp');"></div>
       <div class="relative max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 text-white">
         <div class="flex items-center justify-center py-6 space-x-6">
           <i class="fa-regular fa-building text-5xl md:text-6xl text-[#FFC845]"></i>
@@ -199,63 +192,61 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
 
-    
+    <!-- quinta seccion -->
+    <section id="clientes" class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-center text-[#005EB8] mb-12 md:mb-16">
+            Nuestros Clientes
+          </h2>
+          <div class="overflow-hidden relative">
+            <div id="clientes-slider" class="flex transition-transform duration-700 ease-in-out">
+              <!-- cliente 1 -->
+              <div class="min-w-full sm:min-w-1/2 lg:min-w-1/3 flex-shrink-0 px-0 sm:px-4">
+                <div class="bg-white shadow-lg rounded-xl p-6 flex justify-center items-center h-40">
+                  <img src="/images/minerafilipenses.webp" alt="Cliente 1" class="max-h-78">
+                </div>
+              </div>
+              <!-- cliente 2 -->
+              <div class="min-w-full sm:min-w-1/2 lg:min-w-1/3 flex-shrink-0 px-0 sm:px-4">
+                <div class="bg-white shadow-lg rounded-xl p-6 flex justify-center items-center h-40">
+                  <img src="/images/fundacion_cientifica.webp" alt="Cliente 2" class="max-h-78">
+                </div>
+              </div>
+              <!-- cliente 3 -->
+              <div class="min-w-full sm:min-w-1/2 lg:min-w-1/3 flex-shrink-0 px-0 sm:px-4">
+                <div class="bg-white shadow-lg rounded-xl p-6 flex justify-center items-center h-40">
+                  <img src="/images/aprojus.webp" alt="Cliente 3" class="max-h-48">
+                </div>
+              </div>
+              <!-- cliente 4 -->
+              <div class="min-w-full sm:min-w-1/2 lg:min-w-1/3 flex-shrink-0 px-0 sm:px-4">
+                <div class="bg-white shadow-lg rounded-xl p-6 flex justify-center items-center h-40">
+                  <span class="text-center font-bold text-xl leading-tight px-2" style="color: #144574;">
+                    ASOCIACION PESCADORES<br>ARTESANALES<br>MATARANI
+                  </span>
+                </div>
+              </div>
+              <!-- cliente 5 -->
+              <div class="min-w-full sm:min-w-1/2 lg:min-w-1/3 flex-shrink-0 px-0 sm:px-4">
+                <div class="bg-white shadow-lg rounded-xl p-6 flex justify-center items-center h-40">
+                  <span class="text-center font-bold text-xl leading-tight px-2" style="color: #144574;">
+                    ASOCIACION DE<br>AGRICULTORES<br>SAN CAMILO
+                  </span>
+                </div>
+              </div>
+              <!-- cliente 6-->
+              <div class="min-w-full sm:min-w-1/2 lg:min-w-1/3 flex-shrink-0 px-0 sm:px-4">
+                <div class="bg-white shadow-lg rounded-xl p-6 flex justify-center items-center h-40">
+                  <span class="text-center font-bold text-xl leading-tight px-2" style="color: #144574;">
+                    MINERA<br>OTTO VON QUELGUA
+                  </span>
+                </div>
+              </div>
 
-<!-- Sección Nuestros Clientes -->
-    <section class="bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12 md:mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#005EB8] mb-4">Nuestros Clientes</h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Clientes que confían en nosotros y en la calidad de nuestro servicio.
-          </p>
-        </div>
-
-        
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12">
-      
-          <div class="client-logo">
-            <img src="/images/clientes/cliente1.png" alt="Logo Cliente 1" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
-          </div>
-          
-          <div class="client-logo">
-            <img src="/images/clientes/cliente2.png" alt="Logo Cliente 2" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
-          </div>
-          
-          <div class="client-logo">
-            <img src="/images/clientes/cliente3.png" alt="Logo Cliente 3" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
-          </div>
-          
-          <div class="client-logo">
-            <img src="/images/clientes/cliente4.png" alt="Logo Cliente 4" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
-          </div>
-          
-          <div class="client-logo">
-            <img src="/images/clientes/cliente5.png" alt="Logo Cliente 5" class="w-full h-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105">
-          </div>
-        </div>
-
-        <div class="mt-12 overflow-hidden">
-          <div class="flex animate-scroll-logos">
-            <div class="flex space-x-12 px-4">
-              <img src="/images/clientes/cliente1.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente2.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente3.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente4.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente5.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              
-              <img src="/images/clientes/cliente1.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente2.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente3.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente4.png" alt="" class="h-12 object-contain grayscale opacity-80">
-              <img src="/images/clientes/cliente5.png" alt="" class="h-12 object-contain grayscale opacity-80">
             </div>
           </div>
         </div>
-      </div>
-      
     </section>
-    
     
   <script src="/scripts/scroll-animations.js" is:inline></script>
 </Layout>

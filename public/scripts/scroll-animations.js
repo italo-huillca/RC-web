@@ -117,3 +117,53 @@ document.addEventListener("DOMContentLoaded", initCounterAnimation);
 document.addEventListener('astro:after-swap', initCounterAnimation);
 
 
+// ===============================
+// Seccion4 - clientes
+// ===============================
+
+function initClientesSlider() {
+    const slider = document.getElementById("clientes-slider");
+    if (!slider) return;
+
+    const items = Array.from(slider.children);
+    let itemsPerView = window.innerWidth < 768 ? 1 : 3; 
+
+    items.forEach(item => {
+        const clone = item.cloneNode(true);
+        slider.appendChild(clone);
+    });
+
+    slider.style.display = "flex";
+    slider.style.flexWrap = "nowrap";
+    slider.style.transition = "transform 0.5s linear";
+
+    let index = 0;
+    let slideWidth = 100 / itemsPerView; 
+
+    setInterval(() => {
+        index++;
+        slider.style.transform = `translateX(-${index * slideWidth}%)`;
+
+        if (index >= items.length) {
+            setTimeout(() => {
+                slider.style.transition = "none";
+                slider.style.transform = "translateX(0)";
+                index = 0;
+                setTimeout(() => {
+                    slider.style.transition = "transform 0.5s linear";
+                }, 50);
+            }, 500);
+        }
+    }, 2000);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initCounterAnimation();
+    initClientesSlider();
+});
+
+document.addEventListener("astro:after-swap", () => {
+    initCounterAnimation();
+    initClientesSlider();
+});
+

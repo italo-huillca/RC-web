@@ -1,7 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
----
 
+const HAS_CLIENT_ASSETS = false; // cambia a true cuando subas los logos
+const CLIENT_PLACEHOLDER =
+  'data:image/svg+xml;utf8,' +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="240" height="72" viewBox="0 0 240 72">
+      <rect width="100%" height="100%" fill="#F1F5F9"/>
+      <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"
+            fill="#94A3B8" font-family="Arial, sans-serif" font-size="16">
+        Próximamente
+      </text>
+    </svg>`
+  );
+
+const HAS_POSTER = false; // evita 404 del poster hasta que exista
+---
 <Layout title="R&C Group Contratistas generales">
   
     <section class="relative h-[90vh] min-h-[500px] flex items-center justify-center text-center text-white overflow-hidden">
@@ -11,7 +25,7 @@ import Layout from "../layouts/Layout.astro";
         loop
         muted
         playsinline
-        poster="/images/fondo-construccion-poster.jpg"
+        poster={HAS_POSTER ? "/images/fondo-construccion-poster.jpg" : undefined}
       >
         <source src="/videos/fondo-construccion.mp4" type="video/mp4">
         <source src="/videos/fondo-construccion.webm" type="video/webm">
@@ -47,8 +61,6 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
     
-
-    <!-- Segunda seccion-->
     <section class="relative bg-white py-24 md:py-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img src="/images/construccion-bg.webp" alt="Fondo construcción" 
@@ -191,7 +203,6 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </section>
-
     <!-- quinta seccion -->
     <section id="clientes" class="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
@@ -246,8 +257,7 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
         </div>
-    </section>
-    
+    </section>    
   <script src="/scripts/scroll-animations.js" is:inline></script>
 </Layout>
 

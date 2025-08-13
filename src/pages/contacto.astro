@@ -1,7 +1,106 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import Layout from "../layouts/Layout.astro";
+import { Mail, MapPin, Phone } from "lucide-astro";
+
 ---
+
+
+
+
+
 <Layout title="Contacto">
+  <div class="w-full min-h-screen bg-white flex flex-col items-center py-8">
+    <div
+      class="w-full max-w-6xl bg-white rounded-xl shadow-lg p-8 flex flex-col md:flex-row gap-8"
+    >
+      <!-- Info de contacto -->
+      <div class="flex-1 flex flex-col gap-6">
+        <div class="flex justify-between gap-4 mb-6">
+          <div class="flex flex-col items-center flex-1">
+            <div
+              class="bg-golden rounded-full w-16 h-16 flex items-center justify-center mb-2 shadow-lg"
+            >
+              <Mail class="w-8 h-8 text-whale" />
+            </div>
+            <span class="font-bold text-lg">Correo:</span>
+            <span class="text-base">gruporc2014@hotmail.com</span>
+          </div>
+          <div class="flex flex-col items-center flex-1">
+            <div
+              class="bg-golden rounded-full w-16 h-16 flex items-center justify-center mb-2 shadow-lg"
+            >
+              <MapPin class="w-8 h-8 text-whale" />
+            </div>
+            <span class="font-bold text-lg">Dirección:</span>
+            <span class="text-base text-center"
+              >Urb. Juan el Bueno. Mz A Lote 19, Arequipa</span
+            >
+          </div>
+          <div class="flex flex-col items-center flex-1">
+            <div
+              class="bg-golden rounded-full w-16 h-16 flex items-center justify-center mb-2 shadow-lg"
+            >
+              <Phone class="w-8 h-8 text-whale" />
+            </div>
+            <span class="font-bold text-lg">Celular:</span>
+            <span class="text-base"> +51 999 666 134</span>
+          </div>
+        </div>
+        <!-- Formulario -->
+        <form id="contact-form" class="flex flex-col gap-4">
+          <span class="font-bold text-xl mb-2">Contacto</span>
+          <input
+            type="text"
+            name="name"
+            placeholder="Tu nombre"
+            class="border border-whale rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-golden transition"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Tu correo:"
+            class="border border-whale rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-golden transition"
+          />
+          <input
+            type="text"
+            name="title"
+            value="Me contacto por la pagina web"
+            hidden
+          />
+          <input
+            type="tel"
+            name="telefono"
+            placeholder="Tu telefono:"
+            class="border border-whale rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-golden transition"
+          />
+          <textarea
+            name="message"
+            placeholder="mensaje:"
+            rows="3"
+            class="border border-whale rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-golden transition resize-none"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-golden text-whale font-bold py-2 rounded shadow-md hover:bg-whale hover:text-golden transition-colors duration-300"
+          >
+            ENVIAR MENSAJE
+          </button>
+        </form>
+      </div>
+      <!-- Mapa -->
+      <div class="flex-1 flex items-center justify-center">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d239.20235879837733!2d-71.54099626998843!3d-16.41274784302255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424af109555555%3A0xe484e018d1d17f59!2sUrbanizaci%C3%B3n%20Juan%20El%20Bueno!5e0!3m2!1ses!2spe!4v1755015896731!5m2!1ses!2spe"
+          width="100%"
+          height="500"
+          style="border:0; border-radius:1rem;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
 
+  
+  <script type="module" src="/src/scripts/contact-form.ts"></script>
 </Layout>
-

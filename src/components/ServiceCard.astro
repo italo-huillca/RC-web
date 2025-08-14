@@ -40,10 +40,14 @@ const { title, description, img, link } = Astro.props;
 </div>
 
 <style>
-  .flip-card { perspective: 1000px; }
+  .flip-card {
+    perspective: 1000px;
+    isolation: isolate; /* evita artefactos de composición */
+  }
   .flip-card-inner {
-    transition: transform 0.6s;
+    transition: transform 500ms cubic-bezier(.2,.65,.3,1);
     transform-style: preserve-3d;
+    will-change: transform;
     position: relative;
     width: 100%;
     height: 100%;
@@ -54,6 +58,7 @@ const { title, description, img, link } = Astro.props;
   .flip-card:focus-within .flip-card-inner {
     transform: rotateY(180deg);
   }
+
   .flip-card-front,
   .flip-card-back {
     backface-visibility: hidden;
@@ -62,9 +67,22 @@ const { title, description, img, link } = Astro.props;
     inset: 0;
     border-radius: inherit;
     overflow: hidden;
+    transform: translateZ(0.01px); /* evita flicker/z-fighting */
   }
-  .flip-card-front { background: #f8fafc; }
-  .flip-card-back { transform: rotateY(180deg); }
+  .flip-card-front {
+    background: #f8fafc;
+    pointer-events: none; /* evita saltos al pasar por encima del contenido frontal */
+    transform: rotateY(0deg) translateZ(0.01px);
+  }
+  .flip-card-back {
+    transform: rotateY(180deg) translateZ(0.01px);
+  }
+
+  /* Habilita clicks solo cuando está volteada */
+  .flip-card:hover .flip-card-back,
+  .flip-card:focus-within .flip-card-back {
+    pointer-events: auto;
+  }
 
   .golden-front {
     background: linear-gradient(160deg, #fde68a 0%, #facc15 100%);
@@ -78,5 +96,13 @@ const { title, description, img, link } = Astro.props;
     -webkit-text-stroke: 0.6px rgba(0, 0, 0, 0.45);
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
     paint-order: stroke fill;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flip-card-inner { transition: none; }
+    .flip-card:hover .flip-card-inner,
+    .flip-card:focus .flip-card-inner,
+    .flip-card:focus-within .flip-card-inner { transform: none; }
+    .flip-card-back { transform: none; }
   }
 </style>

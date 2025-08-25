@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rc-livid.vercel.app/sitemap.xml

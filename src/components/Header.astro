@@ -7,6 +7,8 @@ const links = [
   { href: "/contacto", label: "Contacto" },
 ];
 
+// Tipado explícito para evitar 'any'
+const normalize = (path: string) => path.replace(/\/$/, '') || '/';
 const currentPath = Astro.url.pathname;
 ---
 <header class="relative top-0 z-50 bg-white/70 backdrop-blur-md backdrop-saturate-150 supports-[backdrop-filter]:bg-white/60 border-b border-whale/10 shadow-sm">
@@ -30,7 +32,7 @@ const currentPath = Astro.url.pathname;
             links
               .filter((l) => l.href !== "/contacto")
               .map((link) => {
-                const active = currentPath === link.href;
+                const active = normalize(currentPath) === normalize(link.href);
                 return (
                   <a
                     href={link.href}
@@ -82,7 +84,7 @@ const currentPath = Astro.url.pathname;
       <ul class="flex flex-col divide-y divide-whale/10">
         {
           links.map((link) => {
-            const active = currentPath === link.href;
+            const active = normalize(currentPath) === normalize(link.href);
             return (
               <li>
                 <a
@@ -105,48 +107,88 @@ const currentPath = Astro.url.pathname;
   </div>
 
   <script is:inline>
-    // Toggle simple para el menú móvil
     (function () {
-      const btn = document.getElementById('menuButton');
-      const panel = document.getElementById('mobileNav');
-      if (!btn || !panel) return;
-
-      const close = () => {
-        panel.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-      };
-      const open = () => {
-        panel.classList.remove('hidden');
-        btn.setAttribute('aria-expanded', 'true');
+      // Limpia listeners previos si los hubiera (entre swaps)
+      const runCleanup = () => {
+        if (window.__headerCleanup) {
+          try { window.__headerCleanup(); } catch {}
+          window.__headerCleanup = undefined;
+        }
       };
 
-      let openState = false;
-      const toggle = () => {
-        openState ? close() : open();
-        openState = !openState;
-      };
+      const init = () => {
+        const btn = document.getElementById('menuButton');
+        const panel = document.getElementById('mobileNav');
+        if (!btn || !panel) return;
 
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggle();
-      });
+        const close = () => {
+          panel.classList.add('hidden');
+          btn.setAttribute('aria-expanded', 'false');
+        };
+        const open = () => {
+          panel.classList.remove('hidden');
+          btn.setAttribute('aria-expanded', 'true');
+        };
 
-      document.addEventListener('click', (e) => {
-        if (!openState) return;
-        if (!panel.contains(e.target) && !btn.contains(e.target)) {
+        let openState = !panel.classList.contains('hidden');
+
+        const onBtnClick = (e) => {
+          e.stopPropagation();
+          openState ? close() : open();
+          openState = !openState;
+        };
+
+        const onDocClick = (e) => {
+          if (!openState) return;
+          const t = e.target;
+          if (!(t instanceof Element)) return;
+          if (!panel.contains(t) && !btn.contains(t)) {
+            openState = false;
+            close();
+          }
+        };
+
+        const onPanelClick = (e) => {
+          const t = e.target;
+          if (!(t instanceof Element)) return;
+          const link = t.closest('a');
+          if (link) {
+            openState = false;
+            close();
+            // no preventDefault: deja navegar
+          }
+        };
+
+        const onPageShow = () => {
           openState = false;
           close();
-        }
-      });
+        };
 
-      // Cerrar al navegar
-      panel.addEventListener('click', (e) => {
-        const target = e.target;
-        if (target && target.tagName === 'A') {
-          openState = false;
-          close();
-        }
-      });
+        btn.addEventListener('click', onBtnClick);
+        document.addEventListener('click', onDocClick);
+        panel.addEventListener('click', onPanelClick);
+        window.addEventListener('pageshow', onPageShow);
+
+        // Exponer cleanup para futuros swaps
+        window.__headerCleanup = () => {
+          btn.removeEventListener('click', onBtnClick);
+          document.removeEventListener('click', onDocClick);
+          panel.removeEventListener('click', onPanelClick);
+          window.removeEventListener('pageshow', onPageShow);
+        };
+      };
+
+      // Inicial: al cargar
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init, { once: true });
+      } else {
+        init();
+      }
+
+      // Astro View Transitions: limpiar antes del swap y re‑inicializar después
+      document.addEventListener('astro:before-swap', runCleanup);
+      document.addEventListener('astro:page-load', init);
+      document.addEventListener('astro:after-swap', init);
     })();
   </script>
 </header>

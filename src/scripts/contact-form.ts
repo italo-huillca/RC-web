@@ -3,28 +3,31 @@ export function initContactForm() {
     const form = document.getElementById("contact-form") as HTMLFormElement | null;
     if (!form) return;
 
-    let emailjsModPromise: Promise<any> | null = null;
-    const loadEmailJS = () => {
-      if (!emailjsModPromise) {
-        emailjsModPromise = import("@emailjs/browser").then((mod) => {
-          const emailjs = mod.default || mod;
-          emailjs.init("QfLJtGWncFZZRW72b"); // Public Key
-          return emailjs;
-        });
-      }
-      return emailjsModPromise;
-    };
+    const WHATSAPP_PHONE = "51999666134"; // +51 999 666 134
 
-    form.addEventListener("submit", async (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      try {
-        const emailjs = await loadEmailJS();
-        await emailjs.sendForm("service_u0q07za", "template_wlgfr4r", form);
-        alert("Mensaje enviado correctamente");
-        form.reset();
-      } catch (error: any) {
-        alert("Error al enviar: " + (error?.text || JSON.stringify(error)));
+
+      const data = new FormData(form);
+      const name = (data.get("name") as string || "").trim();
+      const email = (data.get("email") as string || "").trim();
+      const message = (data.get("message") as string || "").trim();
+
+      if (!name || !message) {
+        alert("Por favor completa tu nombre y el mensaje.");
+        return;
       }
+
+      const text = email
+        ? `hola me contacto desde la web RC, soy ${name}, mi correo es ${email} y mi mensaje es:\n${message}`
+        : `hola me contacto desde la web RC, soy ${name} y mi mensaje es:\n${message}`;
+
+      const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+
+      const win = window.open(url, "_blank");
+      if (!win) window.location.href = url;
+
+      form.reset();
     });
   });
 }

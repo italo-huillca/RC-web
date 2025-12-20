@@ -1,91 +1,78 @@
-# Sitio web corporativo Grupo R&C (Astro + Tailwind)
+# Grupo R&C – Sitio Web Corporativo
 
-Proyecto web construido con Astro y Tailwind CSS, con estilos y tokens de diseño corporativos del Grupo R&C.
+Sitio web corporativo desarrollado para el **Grupo R&C**, construido con Astro y Tailwind CSS. El proyecto implementa una arquitectura moderna orientada a rendimiento, SEO y mantenibilidad, utilizando tokens de diseño y tipografías alineadas con la identidad visual de la empresa.
 
-## 🚀 Estructura del proyecto
+El objetivo principal del sitio es presentar de forma clara los servicios, ventajas competitivas, experiencia y canales de contacto del Grupo R&C mediante una interfaz limpia, responsive y coherente con su branding institucional.
 
-```text
-/
-├── astro.config.mjs
-├── package.json
-├── pnpm-lock.yaml
-├── README.md
-├── tsconfig.json
-├── public/
-│   ├── favicons/
-│   │   ├── android-chrome-192x192.png
-│   │   ├── android-chrome-512x512.png
-│   │   ├── apple-touch-icon.png
-│   │   ├── favicon.ico
-│   │   ├── icon.svg
-│   │   └── manifest.webmanifest
-│   ├── fonts/
-│   │   ├── Genos-VariableFont_wght.woff2
-│   │   └── Poppins-Regular.woff2
-│   └── images/
-│       ├── logo_mas_letras.webp
-│       └── logo.png
-└── src/
-	├── assets/
-	├── components/
-	│   ├── Footer.astro
-	│   └── Header.astro
-	├── layouts/
-	│   └── Layout.astro
-	├── pages/
-	│   ├── contacto.astro
-	│   ├── experiencia.astro
-	│   ├── index.astro
-	│   ├── nosotros.astro
-	│   ├── servicios.astro
-	│   └── ventajas.astro
-	└── styles/
-		└── global.css
-```
+---
 
-## 🎨 Colores corporativos
+## Características principales
 
-Los siguientes colores forman parte de la identidad visual de la empresa y están definidos como tokens de tema en Tailwind (utilizables con clases como `bg-<color>`, `text-<color>`, `border-<color>`):
+- Sitio web estático de alto rendimiento construido con Astro
+- Diseño corporativo basado en tokens de color y tipografías propias
+- Arquitectura modular mediante layouts y componentes reutilizables
+- Navegación clara entre secciones informativas
+- Soporte completo para responsive design
+- SEO básico integrado
+- Assets optimizados (imágenes, fuentes y favicons)
+- Preparado para despliegue continuo en plataformas modernas
 
-- azul: #005EB8
-- golden: #FFC845
-- whale: #1F2A44
-- cornFlower: #8BB8E8
-- blanco: #FFFFFF
+---
 
-Ejemplos de uso:
+## Tecnologías usadas
 
-- Fondo principal: `bg-whale`
-- Texto destacado: `text-golden`
-- Enlaces secundarios: `text-cornFlower`
-- Bordes y divisores: `border-golden`
+| Componente        | Tecnología            |
+|------------------|-----------------------|
+| Framework Web    | Astro                 |
+| Estilos          | Tailwind CSS v4       |
+| Lenguajes        | Astro, TypeScript     |
+| Gestión paquetes | pnpm                  |
+| Tipografías      | Genos, Poppins        |
+| Deploy           | Vercel                |
 
-Estos tokens se definen en `src/styles/global.css` mediante `@theme` (Tailwind CSS v4).
+---
 
-## 🔤 Tipografías
+## Colores corporativos
 
-Se utilizan dos tipografías corporativas embebidas con `@font-face`:
+Los siguientes colores forman parte de la identidad visual del Grupo R&C y están definidos como tokens de tema en Tailwind CSS:
 
-- Genos (variable 100–900)
-- Poppins (Regular 400)
+| Token        | Hex       | Uso principal                    |
+|-------------|-----------|----------------------------------|
+| azul        | #005EB8   | Elementos institucionales        |
+| golden      | #FFC845   | Acentos y destacados             |
+| whale       | #1F2A44   | Fondos principales               |
+| cornFlower  | #8BB8E8   | Enlaces y elementos secundarios  |
+| blanco      | #FFFFFF   | Fondos y contraste               |
 
-Clases de utilidad disponibles para aplicarlas:
+---
 
-- `.font-family-genos` → Usa la fuente Genos
-- `.font-family-poppins` → Usa la fuente Poppins
+## Comandos de desarrollo
 
-Las fuentes se alojan en `public/fonts` y se cargan globalmente desde `src/styles/global.css`.
+Todos los comandos se ejecutan desde la raíz del proyecto:
 
-## 🧞 Commands
+| Comando          | Acción                                             |
+|------------------|----------------------------------------------------|
+| pnpm install     | Instala las dependencias                           |
+| pnpm dev         | Inicia el servidor de desarrollo (localhost:4321) |
+| pnpm build       | Genera el build de producción en `./dist`         |
+| pnpm preview     | Previsualiza el build localmente                  |
+| pnpm astro ...   | Ejecuta comandos del CLI de Astro                 |
+| pnpm astro --help| Ayuda del CLI de Astro                            |
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## Demo
+
+- Sitio en producción: https://rc-livid.vercel.app
+
+---
+
+## Autor
+
+**Italo Huillca**  
+GitHub: https://github.com/italo-huillca  
+LinkedIn: https://linkedin.com/in/italo-huillca
+
+
+## Estructura del proyecto
 
